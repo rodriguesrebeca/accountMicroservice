@@ -1,7 +1,7 @@
 package com.exercises.bank.model;
 
 import com.exercises.bank.dto.AccountRequest;
-import com.exercises.bank.dto.transaction.Transaction;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -36,7 +36,7 @@ public class Account {
     @CreatedDate
     private LocalDateTime createdDate;
 
-    @Column(name = "updatedDate")
+    @Column(name = "updated_date")
     @LastModifiedDate
     private LocalDateTime updatedDate;
 
@@ -48,7 +48,7 @@ public class Account {
     private AccountType accountType;
 
 
-    public Account (AccountRequest accountRequest, Transaction transaction) {
+    public Account (AccountRequest accountRequest) {
         number = accountRequest.getNumber();
         agency = accountRequest.getAgency();
         balance = accountRequest.getBalance();

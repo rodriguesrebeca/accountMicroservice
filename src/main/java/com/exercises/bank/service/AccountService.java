@@ -9,5 +9,11 @@ import java.util.List;
 public interface AccountService {
     AccountResponse create(AccountRequest accountRequest);
 
+    List<Account> getAll();
+
+    Account getById(Integer id);
+
     List<Account> getByNumber(String accountRequest);
+
+    void delete(Integer id);
 }
